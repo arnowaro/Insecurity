@@ -1,8 +1,12 @@
 @extends('layouts.app')
 @section('title')
-    <title>{{ __('Home') }}</title>
+    <title> History </title>
 @endsection
 @section('main')
+
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 @section('css')
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
@@ -11,5 +15,10 @@
 @endsection
 
 
-<h1> COUCOU</h1>
+
+
+
+
+
+
 @endsection

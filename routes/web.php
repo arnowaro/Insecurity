@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/history', function () {
+    return view('history');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
