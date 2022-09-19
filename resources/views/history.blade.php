@@ -10,175 +10,383 @@
 
 
 
-    <div class=" flex flex-col gap-2 m-2">
+    <div class="main_content">
+        <div class="mcontainer">
 
-        {{-- cover --}}
-        <div class=" items-center flex flex-col bg-red-400">
-            <div class="justify-start">
+            <!-- cover -->
+            <div class="profile lg:rounded-b-xl">
 
-                <h1 class="text-5xl">History</h1>
-                <p class="cover__text--subtitle">The history of the world is the history of the struggle of
-                    liberty against power.</p>
-                <p>category : Vols</p>
-                <p>sub-category: avec violence</p>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4">
-            <div class="  grid grid-row gap-4">
-
-
-                <div class=" rounded-sm  bg-slate-400 drop-shadow-xl ">
-
-                    <h3> Description </h3>
-                    <p> lieu </p>
-                    <p> date </p>
-                    <p> heure </p>
-
-                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                        and
-                        scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                        leap
-                        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                        the
-                        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                        publishing
-                        software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                <div class="profiles_banner">
+                    <img src="assets/images/group/group-cover-2.jpg" alt="" class="z-10">
                 </div>
+                <div class="profiles_content">
+                    <div class="profile_info lg:p-3">
+                        <h1> Titre </h1>
+                        <div class="flex space-x-2 items-center md:pt-3 text-base md:justify-start justify-center">
 
-                <div class=" rounded-sm  bg-slate-400 drop-shadow-2xl">
-                    <H2>VICTIME</H2>
-                    <p>nom </p>
-                    <p>age </p>
-                    <p>genre </p>
-                    <p>nationalité </p>
-                    <p>profession </p>
-                    <p>lieu de naissance </p>
-                    <p>date de naissance </p>
-                    <p>état de santé </p>
+                            <div> Categorie(s)
+                                <a href="#" class="font-medium"> Parent Project Muscular Dystrophy</a>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2 items-center md:pt-3 text-base md:justify-start justify-center">
 
+                            <div> Sous-Categorie(s)
+                                <a href="#" class="font-medium"> Parent Project Muscular Dystrophy</a>
+                            </div>
+                        </div>
 
-
-
-                </div>
-
-                <div class=" rounded-sm  bg-red-600 drop-shadow-2xl">
-                    <h2> Coupable</h2>
-                    <p> nom : </p>
-                    <p> prenom : </p>
-                    <p> age : </p>
-                    <p> sexe : </p>
-                    <p> métier : </p>
-                    <p> ville de naissance: </p>
-                    <p> casier vierge : </p>
-                    <p> état débriété: </p>
-                    <p> état mental: </p>
-                    <p> OQTF: </p>
+                    </div>
 
 
 
-                </div>
 
-                <div >
-                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true">
 
-                        <ul class="uk-slider-items uk-grid">
-                            <li class="uk-width-3-4">
-                                <div class="uk-panel">
-                                    <img src="images/photo.jpg" width="400" height="600" alt="">
-                                    <div class="uk-position-center uk-panel"><h1>1</h1></div>
-                                </div>
-                            </li>
-                            <li class="uk-width-3-4">
-                                <div class="uk-panel">
-                                    <img src="images/dark.jpg" width="400" height="600" alt="">
-                                    <div class="uk-position-center uk-panel"><h1>2</h1></div>
-                                </div>
-                            </li>
-                            <li class="uk-width-3-4">
-                                <div class="uk-panel">
-                                    <img src="images/light.jpg" width="400" height="600" alt="">
-                                    <div class="uk-position-center uk-panel"><h1>3</h1></div>
-                                </div>
-                            </li>
-                            <li class="uk-width-3-4">
-                                <div class="uk-panel">
-                                    <img src="images/photo2.jpg" width="400" height="600" alt="">
-                                    <div class="uk-position-center uk-panel"><h1>4</h1></div>
-                                </div>
-                            </li>
-                            <li class="uk-width-3-4">
-                                <div class="uk-panel">
-                                    <img src="images/photo3.jpg" width="400" height="600" alt="">
-                                    <div class="uk-position-center uk-panel"><h1>5</h1></div>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-
+                    <div
+                        class="flex items-center space-x-4 lg:absolute bottom-0 right-0 p-6 z-10 justify-center md:text-base font-medium">
+                        <a href="#"
+                            class="flex items-center justify-center h-10 px-6 rounded-md space-x-1.5 bg-gray-200">
+                            <span> Share </span>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center h-10 px-6 rounded-md space-x-1.5 bg-blue-600 text-white">
+                            <ion-icon name="color-wand" class="text-xl md hydrated" role="img" aria-label="color wand">
+                            </ion-icon>
+                            <span> Donated</span>
+                        </a>
                     </div>
                 </div>
 
+
             </div>
 
-            <div class=" flex flex-col gap-3">
-                {{-- // map --}}
-
-                <div id="map" class="h-2/3 rounded-[25px] bg-emerald-500"></div>
+            <div class="md:flex  md:space-x-8 lg:mx-14">
+                <div class="space-y-5 flex-shrink-0 md:w-7/12">
 
 
-                <div class=" rounded-sm  bg-slate-400 drop-shadow-2xl">
-                    <h2> Verdicte du juge / peine en courus : Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also
 
-                    </h2>
+                    <div class="card p-7">
 
+                        <div class="space-y-4">
 
-                </div>
+                            <div class="space-y-4">
+                                <h1 class="block text-xl font-bold"> Description </h1>
+                                <p> Ville</p>
+                                <p> Date</p>
+                                <p> Categorie</p>
+                                <p> Sous categorie</p>
+                                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
+                                    minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                                    aliquip ex ea commodo consequat</p>
+                                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
+                                    minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                                    aliquip ex ea commodo consequat</p>
+                            </div>
+                            <div class="line-clamp-3" id="more-text">
+                                Just as there are breeds of chickens for egg and breeds of chickens for meat, there are
+                                ducks breeds specifically for egg production. While duck eggs are more popular in Asia,
+                                for those with allergies to chicken eggs, duck eggs are a good alternative. Ron Kean
+                                from the University of Wisconsin in Madison will be discussing how to raise ducks for
+                                egg production. Just as there are breeds of chickens for egg and breeds of chickens for
+                                meat, there are ducks breeds specifically for egg production. While duck eggs are more
+                                popular in Asia, for those with allergies to chicken eggs, duck eggs are a good
+                                alternative. Ron Kean from the University of Wisconsin in Madison will be discussing how
+                                to raise ducks for egg production.
+                            </div>
+                            <a href="#" id="more-text" uk-toggle="target: #more-text ; cls: line-clamp-3"> See
+                                more </a>
 
-                <div class=" rounded-sm  bg-slate-400 drop-shadow-2xl">
-                    <h2> Votre avis : </h2>
-                    <p> nombre de likes: </p>
-                    <p> nombre de dislikes: </p>
-                    {{-- PROGRESSBAR --}}
-
-                    <div class="uk-progress">
-                        <div class="uk-progress-bar bg-blue-400 color-red-600" style="width: 50%;">50%</div>
+                        </div>
 
                     </div>
-                    {{-- bouton like --}}
-                    <div class="flex flex-row gap-2">
-                        <button class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded">
-                            Like
-                        </button>
-                        <button class="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded">
-                            Dislike
-                        </button>
+                    <div class="card p-7">
+
+                        <div class="space-y-4">
+
+                            <div class="space-y-4">
+                                <h1 class="block text-xl font-bold"> Personne lésée </h1>
+                                <p>age: </p>
+                                <p>sexe: </p>
+                                <p>ville de naissance: </p>
+                                <p>profession:</p>
+
+
+                            </div>
+                            <div class="line-clamp-3" id="more-text">
+                                Just as there are breeds of chickens for egg and breeds of chickens for meat, there are
+                                ducks breeds specifically for egg production. While duck eggs are more popular in Asia,
+                                for those with allergies to chicken eggs, duck eggs are a good alternative. Ron Kean
+                                from the University of Wisconsin in Madison will be discussing how to raise ducks for
+                                egg production. Just as there are breeds of chickens for egg and breeds of chickens for
+                                meat, there are ducks breeds specifically for egg production. While duck eggs are more
+                                popular in Asia, for those with allergies to chicken eggs, duck eggs are a good
+                                alternative. Ron Kean from the University of Wisconsin in Madison will be discussing how
+                                to raise ducks for egg production.
+                            </div>
+                            <a href="#" id="more-text" uk-toggle="target: #more-text ; cls: line-clamp-3"> See
+                                more </a>
+
+                        </div>
+
+                    </div>
+                    <div class="card p-7">
+
+                        <div class="space-y-4">
+
+                            <div class="space-y-4">
+                                <h1 class="block text-xl font-bold"> Responsable </h1>
+                                <p>age: </p>
+                                <p>sexe: </p>
+                                <p>ville de naissance: </p>
+                                <p>profession:</p>
+                                <p>Antécédents judiciaires: </p>
+                                <p>Etat débriété: </p>
+
+
+
+                            </div>
+                            <div class="line-clamp-3" id="more-text">
+                                Just as there are breeds of chickens for egg and breeds of chickens for meat, there are
+                                ducks breeds specifically for egg production. While duck eggs are more popular in Asia,
+                                for those with allergies to chicken eggs, duck eggs are a good alternative. Ron Kean
+                                from the University of Wisconsin in Madison will be discussing how to raise ducks for
+                                egg production. Just as there are breeds of chickens for egg and breeds of chickens for
+                                meat, there are ducks breeds specifically for egg production. While duck eggs are more
+                                popular in Asia, for those with allergies to chicken eggs, duck eggs are a good
+                                alternative. Ron Kean from the University of Wisconsin in Madison will be discussing how
+                                to raise ducks for egg production.
+                            </div>
+                            <a href="#" id="more-text" uk-toggle="target: #more-text ; cls: line-clamp-3"> See
+                                more </a>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <div class=" rounded-sm  bg-slate-400 drop-shadow-2xl">
-                    <h2> Nombre de délit  depuis 5 ans sur cette zone géographique   </h2>
-                </div>
+                <!-- Sidebar -->
+                <div class="w-full flex-shirink-0 gap-3 flex flex-col ">
 
-                <div class=" rounded-sm  bg-slate-400 drop-shadow-2xl">
-                    <h2> Nombre de délit similaire sur  cette zone géographique (100km)  depuis 5 ans
-                    </h2>
+
+                    <x-map />
+
+                    <div class="card p-7">
+
+                        <div class="font-bold text-2xl"> Verdict du juge : </div>
+                        <div class="text-gray-400"> 30 jours de prison ferme</div>
+
+                        <div class="my-4 flex-col flex gap-2">
+
+
+                            <div class="text-blue-500 mb-4 text-lg font-medium">
+                                <span> 32,000,000</span> votes
+                            </div>
+
+
+
+
+                            <div class="bg-gray-50 rounded-2xl h-2 w-full relative overflow-hidden">
+                                <div class="bg-blue-500 h-full w-1/2 absolute left-0 top-0"></div>
+
+                                <div class="bg-blue-600 w-1/3 h-full"></div>
+
+                                <div class="bg-red-500 h-full w-1/2 absolute right-0 top-0"></div>
+                            </div>
+
+
+
+                            <div class="flex items-center space-x-2">
+                                <button
+                                    class="flex items-center justify-center h-10 px-6 rounded-md space-x-1.5 bg-blue-600 text-white">
+                                    <ion-icon name="thumbs-up" class="text-xl md hydrated" role="img"
+                                        aria-label="thumbs up"></ion-icon>
+                                    <span> Like </span>
+                                </button>
+                                <button
+                                    class="flex items-center justify-center h-10 px-6 rounded-md space-x-1.5 bg-gray-200">
+                                    <ion-icon name="thumbs-down" class="text-xl md hydrated" role="img"
+                                        aria-label="thumbs down"></ion-icon>
+                                    <span> Dislike </span>
+                                </button>
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="card px-6 py-7">
+                        <div class="mb-7">
+                            <h4 class="text-xl font-semibold"> Fundraiser progress </h4>
+                            <div class="grid grid-flow-col gap-2 mt-4 text-center">
+                                <a href="$" class="hover:bg-gray-100 rounded-md py-2">
+                                    <h4 class="font-bold text-2xl block mt-3"> 86 </h4>
+                                    <div class="mt-1"> Donated </div>
+                                </a>
+                                <a href="$" class="hover:bg-gray-100 rounded-md py-2">
+                                    <h4 class="font-bold text-2xl block mt-3"> 18.9K </h4>
+                                    <div class="mt-1"> Invated </div>
+                                </a>
+                                <a href="$" class="hover:bg-gray-100 rounded-md py-2">
+                                    <h4 class="font-bold text-2xl block mt-3"> 1.5K </h4>
+                                    <div class="mt-1"> Shared </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <hr class="-mx-6 my-5 border-gray-100">
+
+                        <!--  widget  -->
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <h4 class="text-xl -mb-0.5 font-semibold"> Invite friends </h4>
+                                </div>
+                                <a href="#" class="text-blue-600 ">See all</a>
+                            </div>
+                            <div class="-mx-1">
+                                <div class="flex items-center space-x-4 hover:bg-gray-100 rounded-md -mx-2 p-2">
+                                    <div class="w-10 h-10 flex-shrink-0 rounded-md relative">
+                                        <img src="assets/images/avatars/avatar-3.jpg"
+                                            class="absolute w-full h-full inset-0 rounded-full" alt="">
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-base font-semibold capitalize"> Monroe Parker </h3>
+                                    </div>
+                                    <a href="#"
+                                        class="flex items-center justify-center h-9 px-3.5 rounded-md border font-semibold">
+                                        Invite </a>
+                                </div>
+                                <div class="flex items-center space-x-4 hover:bg-gray-100 rounded-md -mx-2 p-2">
+                                    <div class="w-10 h-10 flex-shrink-0 rounded-md relative">
+                                        <img src="assets/images/avatars/avatar-4.jpg"
+                                            class="absolute w-full h-full inset-0 rounded-full" alt="">
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-base font-semibold capitalize"> Stella Johnson </h3>
+                                    </div>
+                                    <a href="#"
+                                        class="flex items-center justify-center h-9 px-3.5 rounded-md border font-semibold">
+                                        Invite </a>
+                                </div>
+                                <div class="flex items-center space-x-4 hover:bg-gray-100 rounded-md -mx-2 p-2">
+                                    <div class="w-10 h-10 flex-shrink-0 rounded-md relative">
+                                        <img src="assets/images/avatars/avatar-5.jpg"
+                                            class="absolute w-full h-full inset-0 rounded-full" alt="">
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-base font-semibold capitalize"> Alex Dolgove </h3>
+                                    </div>
+                                    <a href="#"
+                                        class="flex items-center justify-center h-9 px-3.5 rounded-md border font-semibold">
+                                        Invite </a>
+                                </div>
+                                <div class="flex items-center space-x-4 hover:bg-gray-100 rounded-md -mx-2 p-2">
+                                    <div class="w-10 h-10 flex-shrink-0 rounded-md relative">
+                                        <img src="assets/images/avatars/avatar-1.jpg"
+                                            class="absolute w-full h-full inset-0 rounded-full" alt="">
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-base font-semibold capitalize"> Adrian Mohani </h3>
+                                    </div>
+                                    <a href="#"
+                                        class="flex items-center justify-center h-9 px-3.5 rounded-md border font-semibold">
+                                        Invite </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="card p-7">
+
+
+                        <div class="flex flex-col items-center justify-between mb-4">
+                            <div>
+                                <h4 class="text-xl -mb-0.5 font-semibold"> Nombre de délit  depuis 5 ans sur cette zone géographique
+
+
+                                    </h4>
+                            </div>
+                            {{-- <a href="#" class="text-blue-600 ">See all</a> --}}
+                        </div>
+                        <div>
+                            <div class="flex items-center  hover:bg-gray-100 rounded-md -mx-2 p-2 pr-0">
+                                <div class="flex-shrink-0 h-16 mr-3 relative rounded-md w-16">
+                                    <img src="assets/images/funding/funder-3.jpg"
+                                        class="absolute w-full h-full inset-0 rounded-md object-cover" alt="">
+                                </div>
+                                <div class="flex-1">
+                                    <a href="#"
+                                        class="capitalize font-semibold line-clamp-1 mb-1 text-base">Striding for a
+                                        Cure for Cystic Fibrosis</a>
+                                    <div class="font-medium text-sm text-gray-400 flex items-center">
+                                        <i class="icon-feather-trending-up text-base text-blue-500 mr-1.5"> </i>
+                                        142 People donated
+                                    </div>
+                                    <div class="mt-2">
+                                        <div class="bg-gray-50 rounded-2xl h-1 w-full relative overflow-hidden">
+                                            <div class="bg-blue-600 w-1/3 h-full"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="card p-7">
+
+
+                        <div class="flex flex-col items-center justify-between mb-4">
+                            <div>
+                                <h4 class="text-xl -mb-0.5 font-semibold"> Nombre de délit similaire sur  cette zone géographique (100km)  depuis 5 ans  </h4>
+                            </div>
+                            {{-- <a href="#" class="text-blue-600 ">See all</a> --}}
+                        </div>
+                        <div>
+                            <div class="flex items-center  hover:bg-gray-100 rounded-md -mx-2 p-2 pr-0">
+                                <div class="flex-shrink-0 h-16 mr-3 relative rounded-md w-16">
+                                    <img src="assets/images/funding/funder-3.jpg"
+                                        class="absolute w-full h-full inset-0 rounded-md object-cover" alt="">
+                                </div>
+                                <div class="flex-1">
+                                    <a href="#"
+                                        class="capitalize font-semibold line-clamp-1 mb-1 text-base">Striding for a
+                                        Cure for Cystic Fibrosis</a>
+                                    <div class="font-medium text-sm text-gray-400 flex items-center">
+                                        <i class="icon-feather-trending-up text-base text-blue-500 mr-1.5"> </i>
+                                        142 People donated
+                                    </div>
+                                    <div class="mt-2">
+                                        <div class="bg-gray-50 rounded-2xl h-1 w-full relative overflow-hidden">
+                                            <div class="bg-blue-600 w-1/3 h-full"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
                 </div>
             </div>
 
-
-
         </div>
-
-
-        {{-- leaftlet --}}
-        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-            integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-            crossorigin=""></script>
-    @endsection
+    </div>
+@endsection

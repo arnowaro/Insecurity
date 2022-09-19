@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HistoryController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,11 @@ Route::get('/history', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// page form create history
+Route::get('/history/create', [HistoryController::class, 'create'])->name('history.create');
+
 
 
 // route home
