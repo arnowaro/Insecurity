@@ -8,8 +8,8 @@
             <div class="uk-grid-small" uk-grid>
                 <div class="uk-width-1-1">
                     <div class="uk-card uk-card-default uk-card-body">
-                        <h3 class="uk-card-title">{{ __('Dashboard') }}</h3>
-                        <p>{{ __('You are logged in!') }}</p>
+                        <h3 class="uk-card-title">{{ __('Tableau de bord') }}</h3>
+                        <p>Bienvenu!</p>
                     </div>
                 </div>
             </div>
