@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BackofficeController;
 use App\Http\Controllers\HistoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 //test
 Route::get('/test', function () {
     return view('home');
+});
+
+Route::controller(BackofficeController::class)->group(function () {
+    Route::get('/admin/', 'show')->name('dashboard');
 });
 
 Route::get('/history', function () {
