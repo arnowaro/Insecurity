@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BackofficeController;
 use App\Http\Controllers\HistoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +32,9 @@ Route::get('/', function () {
 // page form create history
 Route::get('/history/create', [HistoryController::class, 'create'])->name('history.create');
 
-
+Route::controller(BackofficeController::class)->group(function () {
+    Route::get('/admin2/', 'show')->name('backoffice');
+});
 
 // route home
 Route::get('/home', 'HomeController@index')->name('home');

@@ -12,11 +12,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
+
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasApiTokens, HasFactory, Notifiable;
     use SoftDeletes;
 
     protected $table = 'user';
-    
+
 
     /**
      * The attributes that are mass assignable.
