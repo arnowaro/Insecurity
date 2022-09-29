@@ -16,8 +16,8 @@
                 <!-- form body -->
                 <div class="p-10 space-y-7">
 
-                    <form action="" method="post" enctype="multipart/form-data">
-
+                    <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
 
 
                         {{-- Nom --}}

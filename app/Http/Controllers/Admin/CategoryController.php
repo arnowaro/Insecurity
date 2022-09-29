@@ -10,7 +10,13 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard.categories.index');
+        $categories = Category::all();
+        return view('admin.dashboard.categories.index', [
+        'categories' => $categories
+
+    ]);
+
+
     }
 
     public function create()
@@ -38,7 +44,7 @@ class CategoryController extends Controller
             $category->label  = $validated['label'];
             $category->description = $validated['description'];
             $category->save();
-            return redirect()->route('action.category')->with('status', '  category added  ');
+            return redirect()->route('category.index')->with('status', '  category added  ');
         }
     }
 }

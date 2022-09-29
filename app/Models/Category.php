@@ -17,9 +17,9 @@ class Category extends Model
         'image'
     ];
 
-    public function subcategory()
-    {
-        return $this->hasMany(SubCategory::class);
-    }
 
+    public function history()
+    {
+        return $this->belongsToMany(History::class, 'category_history', 'category_id', 'history_id');
+    }
 }

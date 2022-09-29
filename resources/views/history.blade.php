@@ -100,69 +100,8 @@
                         </div>
 
                     </div>
-                    <div class="card p-7">
 
-                        <div class="space-y-4">
-
-                            <div class="space-y-4">
-                                <h1 class="block text-xl font-bold"> Personne lésée </h1>
-                                <p>age: </p>
-                                <p>sexe: </p>
-                                <p>ville de naissance: </p>
-                                <p>profession:</p>
-
-
-                            </div>
-                            <div class="line-clamp-3" id="more-text">
-                                Just as there are breeds of chickens for egg and breeds of chickens for meat, there are
-                                ducks breeds specifically for egg production. While duck eggs are more popular in Asia,
-                                for those with allergies to chicken eggs, duck eggs are a good alternative. Ron Kean
-                                from the University of Wisconsin in Madison will be discussing how to raise ducks for
-                                egg production. Just as there are breeds of chickens for egg and breeds of chickens for
-                                meat, there are ducks breeds specifically for egg production. While duck eggs are more
-                                popular in Asia, for those with allergies to chicken eggs, duck eggs are a good
-                                alternative. Ron Kean from the University of Wisconsin in Madison will be discussing how
-                                to raise ducks for egg production.
-                            </div>
-                            <a href="#" id="more-text" uk-toggle="target: #more-text ; cls: line-clamp-3"> See
-                                more </a>
-
-                        </div>
-
-                    </div>
-                    <div class="card p-7">
-
-                        <div class="space-y-4">
-
-                            <div class="space-y-4">
-                                <h1 class="block text-xl font-bold"> Responsable </h1>
-                                <p>age: </p>
-                                <p>sexe: </p>
-                                <p>ville de naissance: </p>
-                                <p>profession:</p>
-                                <p>Antécédents judiciaires: </p>
-                                <p>Etat débriété: </p>
-
-
-
-                            </div>
-                            <div class="line-clamp-3" id="more-text">
-                                Just as there are breeds of chickens for egg and breeds of chickens for meat, there are
-                                ducks breeds specifically for egg production. While duck eggs are more popular in Asia,
-                                for those with allergies to chicken eggs, duck eggs are a good alternative. Ron Kean
-                                from the University of Wisconsin in Madison will be discussing how to raise ducks for
-                                egg production. Just as there are breeds of chickens for egg and breeds of chickens for
-                                meat, there are ducks breeds specifically for egg production. While duck eggs are more
-                                popular in Asia, for those with allergies to chicken eggs, duck eggs are a good
-                                alternative. Ron Kean from the University of Wisconsin in Madison will be discussing how
-                                to raise ducks for egg production.
-                            </div>
-                            <a href="#" id="more-text" uk-toggle="target: #more-text ; cls: line-clamp-3"> See
-                                more </a>
-
-                        </div>
-
-                    </div>
+                   
 
                 </div>
 

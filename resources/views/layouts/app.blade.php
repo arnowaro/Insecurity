@@ -1,32 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        {{-- <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-        @yield('title')
-        @yield('css')
-        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-            integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-            crossorigin="" />
-
-
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/css/uikit.min.css" />
-
-            <!-- UIkit JS -->
-            <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/js/uikit.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/js/uikit-icons.min.js"></script>
-
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -36,24 +10,15 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <!-- Favicon -->
-        <link href="{{ asset('images/logo/logo-small-risees.png') }}" rel="icon" type="image/png">
-
-
-
         <!-- icons
         ================================================== -->
         <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
-
         <!-- CSS
         ================================================== -->
         <link rel="stylesheet" href="{{ asset('css/uikit.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-        <!-- Google font
-        ================================================== -->
+        <!-- Google font= -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-
         {{-- Font awesome --}}
         <script src="https://kit.fontawesome.com/dcd65f6d8c.js" crossorigin="anonymous"></script>
 
@@ -66,7 +31,7 @@
             crossorigin="" />
         @endsection
     </head>
-    
+
 
         <body>
 
@@ -74,8 +39,6 @@
             <!-- Header  -->
             <x-header />
 
-            <!-- Sidebar  -->
-            <x-sidebar/>
 
             <!-- contents -->
             @yield('main')
@@ -122,8 +85,7 @@
             })(window, document);
         </script>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="{{ asset('js/tippy.all.min.js') }}"></script>
         <script src="{{ asset('js/uikit.js') }}"></script>
         <script src="{{ asset('js/simplebar.js') }}"></script>
@@ -134,6 +96,6 @@
 
 
         @yield('js')
-        @yield('jsNotif')
+
     </body>
 </html>

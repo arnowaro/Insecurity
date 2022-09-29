@@ -1,14 +1,14 @@
 <div>
-    <div id="my-map" class="h-80 w-full
+    <div id="my-map" class="h-96 w-full
     md:rounded-[25px] md:drop-shadow-xl  z-0
     ">
 
     </div>
-    <button class="flex items-center gap-1 absolute bottom-2 left-3 z-50 bg-emerald-500 hover:bg-white text-white hover:text-emerald-600 font-bold py-2 px-4 rounded-full"
+    {{-- <button class="flex items-center gap-1 absolute bottom-2 left-3 z-50 bg-emerald-500 hover:bg-white text-white hover:text-emerald-600 font-bold py-2 px-4 rounded-full"
     onclick="myPosition()"
-    > <span class="text-xl icon-material-outline-where-to-vote"></span> <span class="hidden md:block" >Ma position </span> </button>
+    > <span class="text-xl icon-material-outline-where-to-vote"></span> <span class="hidden md:block" >Ma position </span> </button> --}}
     </div>
-   
+
 
 
 
@@ -18,21 +18,11 @@
             crossorigin=""></script>
         <script>
 
-
-
-
-
-
-
             var map = L.map('my-map').fitWorld();
             map.locate({setView: true, maxZoom: 16, minZoom: 5,});
 
 
 
-            // Faire une fonction qui fait un appel API pour mettre à jour les coordonnées de la personne loggé , prendre en paramettre la latitude et la longitude
-            // consol.log pour voir si la fonction marche
-            // userid   créer un input hidden avec l'id de l'utilisateur
-            // ajax axios
 
             function onLocationFound(e) {
             var radius = e.accuracy;
@@ -68,7 +58,11 @@
             map.attributionControl.setPrefix('')
 
 
+            @foreach ($histories as $history )
 
+            var marker = L.marker([{{ $history->latitude }}, {{ $history->longitude }}]).addTo(map);
+
+        @endforeach
 
 
             function myPosition() {

@@ -16,7 +16,7 @@ class User extends Authenticatable
     use SoftDeletes;
 
     protected $table = 'user';
-    
+
 
     /**
      * The attributes that are mass assignable.
@@ -24,8 +24,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'firstname',
-        'lastname',
+       
         'pseudo',
         'email',
         'password',

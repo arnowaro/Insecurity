@@ -5,17 +5,17 @@ namespace App\View\Components;
 use App\Models\History;
 use Illuminate\View\Component;
 
-class map extends Component
+class mapHistoryEdit extends Component
 {
-    public $histories;
+    public $history;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($id)
     {
-        $this->histories = History::all();
+        $this->history = History::find($id);
     }
 
     /**
@@ -25,6 +25,6 @@ class map extends Component
      */
     public function render()
     {
-        return view('components.map');
+        return view('components.map-history-edit');
     }
 }

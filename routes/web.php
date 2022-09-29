@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BackofficeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,40 +19,45 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //test
-Route::get('/test', function () {
-    return view('home');
-});
+// Route::get('/test', function () {
+//     return view('home');
+// });
+
+// homecontroller
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::controller(BackofficeController::class)->group(function () {
     Route::get('/admin/', 'show')->name('dashboard');
 });
 
 Route::controller(CategoryController::class)->group(function () {
-    Route::get('admin/category', 'index')->name('category');
+    Route::get('admin/category', 'index')->name('category.index');
     Route::get('admin/category/create', 'create')->name('category.create');
-    Route::post('admin/category', 'store')->name('category.store');
+    Route::post('admin/category/create', 'store')->name('category.store');
     Route::get('admin/category/{id}/edit', 'edit')->name('category.edit');
     Route::post('admin/category/{id}', 'update')->name('category.update');
+    Route::delete('admin/category/{id}', 'delete')->name('category.delete');
 });
 
-Route::controller(SubCategoryController::class)->group(function () {
-    Route::get('admin/subcategory', 'index')->name('subcategory');
-    Route::get('admin/subcategory/create', 'create')->name('subcategory.create');
-});
 
 Route::controller(HistoryController::class)->group(function () {
-    Route::get('admin/history', 'index')->name('subcategory');
-    Route::get('/history/create', 'create')->name('history.create');
 
+    Route::get('admin/history', 'index')->name('history.index');
+
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/history/create', 'create')->name('history.create');
+        Route::post('/history/create', 'store')->name('history.store');
+        Route::get('/history/{id}/edit', 'edit')->name('history.edit');
+        Route::post('/history/{id}', 'update')->name('history.update');
+        Route::delete('/history/{id}', 'delete')->name('history.delete');
+        Route::get('/history/{id}', 'show')->name('history.show');
+    });
 });
 
-Route::get('/history', function () {
-    return view('history');
-});
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 // page form create history
@@ -59,10 +65,10 @@ Route::get('/', function () {
 
 
 // route home
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
