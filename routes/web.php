@@ -25,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 
 // homecontroller
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/homecategory/{id}', [HomeController::class, 'homecategory'])->name('homecategory');
+
 
 Route::controller(BackofficeController::class)->group(function () {
     Route::get('/admin/', 'show')->name('dashboard');
@@ -51,7 +53,11 @@ Route::controller(HistoryController::class)->group(function () {
         Route::post('/history/{id}', 'update')->name('history.update');
         Route::delete('/history/{id}', 'delete')->name('history.delete');
         Route::get('/history/{id}', 'show')->name('history.show');
+
     });
+    // index home category{id}
+    Route::get('/history/category/{id}', 'index')->name('history.index.category');
+
 });
 
 

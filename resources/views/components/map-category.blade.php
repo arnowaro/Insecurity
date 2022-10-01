@@ -58,7 +58,7 @@
             map.attributionControl.setPrefix('')
 
 
-            @foreach ($histories as $history )
+            @foreach ($category->history() as $history)
 
             var marker = L.marker([{{ $history->latitude }}, {{ $history->longitude }}]).addTo(map);
             marker.bindPopup("<a href='{{ route('history.show', $history->id) }}'>{{ $history->titre }} </a> <br>  {{ Str::limit($history->description, 30) }}").openPopup();

@@ -26,7 +26,8 @@ class HistoryController extends Controller
     // show
     public function show($id)
     {
-        $history = History::find($id);
+        // history with Category
+        $history = History::with('Category')->find($id);
         return view('history.show', [
             'history' => $history
         ]);
@@ -123,6 +124,12 @@ class HistoryController extends Controller
         $history->delete();
         return redirect()->route('home')->with('status', '  History deleted  ');
     }
+
+
+
+
+
+    // home page by category
 
 }
 

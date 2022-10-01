@@ -23,10 +23,11 @@
                         <div class="flex space-x-2 items-center md:pt-3 text-base md:justify-start justify-center">
 
                             <div> Categorie(s) :
-                                @foreach ($history->Category as $categorie)
-                                    {{-- <span class="text-gray-500">  </span> --}}
-                                <a href="#" class="font-medium">{{$categorie->label}} </a>
-                                @endforeach
+
+                               @foreach ( $history->CategorY as $categorie )
+                               {{$categorie->label}}
+
+                               @endforeach
                             </div>
                         </div>
                         <div class="flex space-x-2 items-center md:pt-3 text-base md:justify-start justify-center">

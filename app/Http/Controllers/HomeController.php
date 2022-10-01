@@ -22,6 +22,19 @@ class HomeController extends Controller
 
     }
 
+    public function homecategory($id)
+    {
+
+
+        $category = Category::with('history')->find($id);
+        $categories = Category::all();
+        return view('history.homecategory', [
+            'categories' => $categories,
+            'histories' => $category->histories,
+            'category' => $category,
+        ]);
 
 
 }
+
+    }
