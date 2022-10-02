@@ -227,7 +227,13 @@
                             <li tabindex="-1" class="uk-active  flex justify-center">
                                 <div class=" flex flex-col w-full items-center justify-center">
                                      <a href="/homecategory/{{$category->id}}" class="w-1/2 md:h-28 h-20 justify-center items-center overflow-hidden rounded-lg relative flex">
-                                         <img src="https://st.depositphotos.com/29688696/58028/v/600/depositphotos_580283956-stock-illustration-a-knife-weapon-the-weapon.jpg" alt="" class="w-20 h-20 rounded-full flex justify-center items-center absolute  object-cover">
+                                         <img src="
+                                            @if ($category->image)
+                                            {{ asset('storage/'.$category->image) }}
+                                            @else
+                                            https://st.depositphotos.com/29688696/58028/v/600/depositphotos_580283956-stock-illustration-a-knife-weapon-the-weapon.jpg
+                                            @endif
+                                         " alt="" class="w-20 h-20 rounded-full flex justify-center items-center absolute  object-cover">
                                          {{-- <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs">  12:21</span>
                                          <img src="assets/images/icon-play.svg" class="w-12 h-12 uk-position-center" alt=""> --}}
                                      </a>
