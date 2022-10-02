@@ -20,22 +20,12 @@ return new class extends Migration
             $table->string('titre');
             $table->string('description');
             $table->date('date');
-            $table->string('image');
             $table->string('latitude');
             $table->string('longitude');
-            // victime data
-            $table->string('victime_name')->nullable();
-            $table->string('victime_firstname')->nullable();
-            $table->string('victime_age')->nullable();
-            $table->boolean('victime_gender')->nullable();
-            $table->string('victime_birth_place')->nullable();
-            // criminal data
-            $table->string('criminal_name')->nullable();
-            $table->string('criminal_firstname')->nullable();
-            $table->string('criminal_age')->nullable();
-            $table->string('criminal_birth_place')->nullable();
-            $table->string('criminal_description')->nullable();
-            $table->string('criminal_image')->nullable();
+            $table->string('url');
+            $table->string('jugement');
+            $table->string('ville');
+            $table->string('pays');
             $table->softDeletes();
             $table->timestamps();
         });

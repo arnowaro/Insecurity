@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    <title>{{ __('Creer une history') }}</title>
+    <title>{{ __('Home') }}</title>
 @endsection
 @section('css')
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
@@ -17,15 +17,16 @@
 
                 <!-- form header -->
                 <div class="text-center border-b border-gray-100 py-6">
-                    <h3 class="font-bold text-xl"> Créer une history </h3>
+                    <h3 class="font-bold text-xl"> Modifier une history </h3>
                 </div>
 
                 <!-- form body -->
                 <div class="p-10 space-y-7">
 
-                    <form action="{{ route('history.store') }}" method="post">
+                    <form action="{{ route('history.update', $history->id) }}" method="post">
                         @csrf
                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                        <input type="hidden" name="id" value="{{ $history->id }}">
 
                         {{-- titre --}}
                         @error('title')
@@ -35,7 +36,7 @@
                         @enderror
                         <div class="space-y-1">
                             <label for="title" class="text-sm font-bold text-gray-700 ">Titre</label>
-                            <input type="text" name="title" id="title" placeholder="Titre" value="{{ old('title') }}"
+                            <input type="text" name="title" id="title"  value="{{ $history->titre }}"
                                 class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500" />
                         </div>
                         @error('city')
@@ -46,7 +47,7 @@
                         {{-- ville --}}
                         <div class="space-y-1">
                             <label for="city" class="text-sm font-bold text-gray-700 ">Ville</label>
-                            <input type="text" name="city" id="city" placeholder="Ville" value="{{ old('city') }}"
+                            <input type="text" name="city" id="city" value="{{ $history->ville }}"
                                 class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500" />
                         </div>
 
@@ -58,7 +59,7 @@
                         {{-- pays --}}
                         <div class="space-y-1">
                             <label for="country" class="text-sm font-bold text-gray-700 ">Pays</label>
-                            <input type="text" name="country" id="country" placeholder="Pays" value="{{ old('country') }}"
+                            <input type="text" name="country" id="country" value="{{ $history->pays }}"
                                 class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500" />
                         </div>
                         @error('time')
@@ -69,7 +70,9 @@
                         {{-- heure --}}
                         <div class="space-y-1">
                             <label for="time" class="text-sm font-bold text-gray-700 ">Heure</label>
-                            <input type="datetime-local" name="time" id="time" placeholder="Heure" value="{{ old('time') }}"
+                            <input type="datetime-local" name="time" id="time"
+
+                                value="{{ date('Y-m-d\TH:i', strtotime($history->date)) }}"
                                 class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500" />
                         </div>
 
@@ -83,9 +86,16 @@
                             <label for="categories" class="text-sm font-bold text-gray-700 ">Catégories</label>
                             <select name="categories[]" id="categories" multiple
                                 class="selectpicker">
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->label }}</option>
+                                {{-- double foreach category selected update --}}
+                                @foreach ($categories as $category )
+                                @if (old('categories'))
+                                <option value="{{ $category->id }}"   {{ (collect(old('categories'))->contains($category->id)) ? 'selected':'' }}>{{ $category->label }}</option>
+                                @else
+                                <option value="{{ $category->id }}" {{ (collect($categoriesHistory)->contains($category->id)) ? 'selected':'' }}>{{ $category->label }}</option>
+                                @endif
                                 @endforeach
+
+
                             </select>
                         </div>
 
@@ -98,9 +108,16 @@
                         {{-- description --}}
                         <div class="space-y-1">
                             <label for="description" class="text-sm font-bold text-gray-700 ">Description</label>
-                            <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" value="{{ old('description') }}"
-                                class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500"></textarea>
+                            <textarea name="description" id="description" cols="30" rows="10"  placeholder="Description"
+                                class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500">
+                                {{$history->description}}
+                            </textarea>
                         </div>
+
+
+
+
+                        <div class="border-b border-gray-500 pt-3"></div>
 
 
 
@@ -113,8 +130,10 @@
                         {{-- verdict du juge --}}
                         <div class="space-y-1">
                             <label for="jugement" class="text-sm font-bold text-gray-700 ">Verdict du juge</label>
-                            <textarea name="jugement" id="jugement" cols="30" rows="5" placeholder="Verdict du juge" value="{{ old('jugement') }}"
-                                class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500"></textarea>
+                            <textarea name="jugement" id="jugement" cols="30" rows="5" placeholder="Verdict du juge"
+                                class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500">
+                            {{$history->jugement}}
+                            </textarea>
                         </div>
 
                         {{-- lien de verification --}}
@@ -129,7 +148,8 @@
                             <p class="text-sm"> Pour que votre history soit publié sur Walksafe, un administrateur doit la
                                 valider à l'aide d'une documentation officiel ( article de presse ou autre).</p>
                             <input type="text" name="url" id="url"
-                                placeholder="Lien de vérification" value="{{ old('url') }}"
+                                placeholder="Lien de vérification"
+                                value="{{$history->url}}"
                                 class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500" />
                         </div>
 
@@ -141,7 +161,7 @@
                         @enderror
                         <div class="space-y-1">
                             <label for="latitude" class="text-sm font-bold text-gray-700 ">Latitude</label>
-                            <input type="text" name="latitude" id="latitude" placeholder="Latitude" value="{{ old('latitude') }}"
+                            <input type="text" name="latitude" id="latitude" placeholder="Latitude" value="{{ $history->latitude}}"
                                 class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500" />
                         </div>
 
@@ -153,13 +173,13 @@
                             @enderror
                         <div class="space-y-1">
                             <label for="longitude" class="text-sm font-bold text-gray-700 ">Longitude</label>
-                            <input type="text" name="longitude" id="longitude" placeholder="Longitude" value="{{ old('longitude') }}"
+                            <input type="text" name="longitude" id="longitude" placeholder="Longitude" value="{{$history->longitude}}"
                                 class="w-full text-base px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500" />
                         </div>
 
                             {{-- carte --}}
-                            <div class="mt-4">
-                                <x-map-history-create />
+                            <div class="mt-4 relative">
+                                <x-map-history-edit :id="$history->id" />
                             </div>
 
 
@@ -176,6 +196,7 @@
                     </form>
 
                 </div>
+
 
 
             </div>

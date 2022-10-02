@@ -2,20 +2,21 @@
 
 namespace App\View\Components;
 
-use App\Models\History;
+use App\Models\Category;
 use Illuminate\View\Component;
 
-class map extends Component
+class mapCategory extends Component
 {
+    // histories of a category
     public $histories;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($id)
     {
-        $this->histories = History::all();
+       $this -> histories = Category::with('history')->find($id)->histories;
     }
 
     /**
@@ -25,6 +26,6 @@ class map extends Component
      */
     public function render()
     {
-        return view('components.map');
+        return view('components.map-category');
     }
 }

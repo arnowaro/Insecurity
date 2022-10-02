@@ -75,7 +75,7 @@
             <x-admin.header />
 
             <!-- Sidebar  -->
-            <x-admin.sidebar/>
+            {{-- <x-admin.sidebar/> --}}
 
             <!-- contents -->
             @yield('main')
