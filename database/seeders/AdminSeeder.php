@@ -19,7 +19,8 @@ class AdminSeeder extends Seeder
         User::insert([
             'pseudo'=>'Admin',
             'email'=>'admin@email.com',
-            'password'=>Hash::make('azerty')
+            'password'=>Hash::make('azerty'),
+            'admin'=> '1',
         ]);
     }
 }

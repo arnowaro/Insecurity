@@ -18,12 +18,16 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('user');
             $table->string('titre');
-            $table->string('description');
+            $table->longText('description');
+
             $table->date('date');
             $table->string('latitude');
             $table->string('longitude');
             $table->string('url');
-            $table->string('jugement');
+
+            $table->longText('jugement');
+
+
             $table->string('ville');
             $table->string('pays');
             $table->softDeletes();

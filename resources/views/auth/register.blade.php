@@ -12,6 +12,8 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
+            <input type="hidden" name="admin" value="0">
+
             <!-- Name -->
             <div>
                 <x-label for="Pseudo" :value="__('Pseudo')" />

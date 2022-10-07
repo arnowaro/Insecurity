@@ -37,8 +37,6 @@
         <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- Favicon -->
-        <link href="{{ asset('images/logo/logo-small-risees.png') }}" rel="icon" type="image/png">
-
 
 
         <!-- icons

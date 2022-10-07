@@ -17,7 +17,11 @@ class HomeController extends Controller
         return view('home', [
         'categories' => $categories,
         'histories' => $histories,
-        ]);
+        // take only 3 categories of each histories
+
+
+    ]);
+
 
 
     }

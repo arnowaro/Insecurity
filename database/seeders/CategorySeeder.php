@@ -20,38 +20,71 @@ class CategorySeeder extends Seeder
         Category::insert([
             'label'=>'Pickpoket',
             'description'=>'pickpoket',
-            'image'=>'\images\category\1K3rORoOD84dzaw5O3pkVLRowpwQwjHP4Omj8hPG.svg'
+            'image'=>'\images\category\pickpocket.png',
         ]);
 
         Category::insert([
             'label'=>'Agression arme blanche',
             'description'=>'Agression',
-            'image'=>'\images\category\1K3rORoOD84dzaw5O3pkVLRowpwQwjHP4Omj8hPG.svg'
+            'image'=>'\images\category\couteau.png'
         ]);
 
         Category::insert([
             'label'=>'harcelement de rue',
             'description'=>'harcelement',
-            'image'=>'\images\subcategory\thfNCdgsiFaj3Npqq9FraWJ4XzUJuZANPL31oYgd.svg'
+            'image'=>'\images\category\padanlaru.png'
         ]);
 
         Category::insert([
             'label'=>'Homicide',
             'description'=>'Homicide',
-            'image'=>'\images\subcategory\cpmmo28VQ87CZXR9AHOSvhVz9ZDeKHV8d6Zv34xL.svg'
+            'image'=>'\images\category\murder.png'
         ]);
 
         Category::insert([
             'label'=>'Vandalisme',
             'description'=>'Vandalisme',
-            'image'=>'\images\subcategory\thfNCdgsiFaj3Npqq9FraWJ4XzUJuZANPL31oYgd.svg'
+            'image'=>'\images\category\vandalism.png'
+        ]);
+
+        Category::insert([
+            'label'=>'Attaque de Requin',
+            'description'=>'Attaque de Requin',
+            'image'=>'\images\category\shark.png'
+        ]);
+
+        Category::insert([
+            'label'=>'Attaque de Chien',
+            'description'=>'Attaque de Chien',
+            'image'=>'\images\category\dog.png'
+        ]);
+
+
+        Category::insert([
+            'label'=>'Vol de voiture',
+            'description'=>'vol de voiture',
+            'image'=>'\images\category\car.png'
         ]);
 
 
 
+        Category::insert([
+            'label'=>'Fusillade',
+            'description'=>'Fusillade',
+            'image'=>'\images\category\gun.png'
+        ]);
 
+        Category::insert([
+            'label'=>'Attentat terroriste',
+            'description'=>'Attentat terroriste',
+            'image'=>'\images\category\terrorist.png'
+        ]);
 
-
+        Category::insert([
+            'label'=>'Incendie criminel',
+            'description'=>'Incendie criminel',
+            'image'=>'\images\category\fire.png'
+        ]);
 
 
 

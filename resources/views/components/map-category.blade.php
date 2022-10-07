@@ -32,7 +32,7 @@
             // @endauth
             // @guest
             // L.marker(e.latlng).addTo(map)
-            //     .bindPopup("Bonjour cliquez sur <a href='{{ route('login') }}'>{{ __('Login') }}</a> ou <a href='{{ route('register') }}'>{{ __('Register') }}</a> pour profiter pleinement de Risees!").openPopup();
+            //     .bindPopup("Bonjour cliquez sur <a href='{{ route('login') }}'>{{ __('Login') }}</a> ou <a href='{{ route('register') }}'>{{ __('Register') }}</a> pour profiter pleinement de Walksafe!").openPopup();
 
 
 

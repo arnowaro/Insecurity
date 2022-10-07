@@ -32,6 +32,10 @@ Route::controller(BackofficeController::class)->group(function () {
     Route::get('/admin/', 'show')->name('dashboard');
 });
 
+// middleware admin
+Route::middleware(['auth', 'Admin'])->group(function () {
+
+
 Route::controller(CategoryController::class)->group(function () {
     Route::get('admin/category', 'index')->name('category.index');
     Route::get('admin/category/create', 'create')->name('category.create');
@@ -41,7 +45,7 @@ Route::controller(CategoryController::class)->group(function () {
     Route::delete('admin/category/{id}', 'delete')->name('category.delete');
 });
 
-
+});
 Route::controller(HistoryController::class)->group(function () {
 
     Route::get('admin/history', 'index')->name('history.index');

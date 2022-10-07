@@ -12,7 +12,9 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- icons
         ================================================== -->
+
         <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
+        
         <!-- CSS
         ================================================== -->
         <link rel="stylesheet" href="{{ asset('css/uikit.css') }}">

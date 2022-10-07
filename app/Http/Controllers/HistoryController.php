@@ -12,6 +12,7 @@ class HistoryController extends Controller
     public function create()
     {
         $categories = Category::all();
+
         return view('history.create', [
             'categories' => $categories
         ]);
@@ -27,7 +28,7 @@ class HistoryController extends Controller
     public function show($id)
     {
         // history with Category
-        $history = History::with('Category')->find($id);
+        $history = History::with('Category')->with('user')->find($id);
         return view('history.show', [
             'history' => $history
         ]);
@@ -40,12 +41,12 @@ class HistoryController extends Controller
             'city' => 'required',
             'country' => 'required',
             'time' => 'required',
-            'description' => 'required|max:1024',
+            'description' => 'required|max:2048',
             'longitude' => 'required',
             'latitude' => 'required',
             'categories' => 'required',
             'categories.*' => 'exists:category,id',
-            'jugement' => 'max:1024',
+            'jugement' => 'max:2048',
             'url' => 'url',
         ]);
 

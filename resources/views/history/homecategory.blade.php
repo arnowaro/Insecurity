@@ -15,8 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
-    <link href="assets/images/favicon.png" rel="icon" type="image/png">
+
 
     <!-- Basic Page Needs
         ================================================== -->
@@ -68,12 +67,21 @@
 
                                   <a href="/history/{{$history->id}}" class="font-semibold line-clamp-2">{{$history->titre}}</a>
                                    <div class="pt-2">
-                                      <a href="#" class="text-sm font-medium"> Adrian Mohani  </a>
                                       <div class="flex space-x-2 items-center text-sm">
-                                          <div> Advance level</div>
-                                          <div class="md:block hidden">·</div>
-                                          <div> 156.9K Enrolled</div>
+
+                                          {{-- <div class="md:block hidden">·</div> --}}
+                                          @foreach ($history->Category as $category)
+                                          <div>
+                                            {{$category->label}}
+
                                         </div>
+                                        @endforeach
+                                    </div>
+                                    <div>
+
+                                        {{date('d-m-Y', strtotime($history->date))}}
+                                                              <a href="#" class="text-sm font-medium"> {{$history->user->pseudo}}  </a>
+
                                     </div>
 
                                 </div>
@@ -128,7 +136,7 @@
                             // @endauth
                             // @guest
                             // L.marker(e.latlng).addTo(map)
-                            //     .bindPopup("Bonjour cliquez sur <a href='{{ route('login') }}'>{{ __('Login') }}</a> ou <a href='{{ route('register') }}'>{{ __('Register') }}</a> pour profiter pleinement de Risees!").openPopup();
+                            //     .bindPopup("Bonjour cliquez sur <a href='{{ route('login') }}'>{{ __('Login') }}</a> ou <a href='{{ route('register') }}'>{{ __('Register') }}</a> pour profiter pleinement de Walkfsafes!").openPopup();
 
 
 

@@ -89,7 +89,7 @@
                     </div>
 
                     <div class="card p-7">
-
+                        <div class=" icon-material-outline-gavel"></div>
                         <h1 class="block text-xl font-bold"> Jugement </h1>
                         <div class="text-gray-400"> {{$history->jugement}}</div>
 

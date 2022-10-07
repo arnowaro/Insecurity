@@ -15,8 +15,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
-    <link href="assets/images/favicon.png" rel="icon" type="image/png">
 
     <!-- Basic Page Needs
         ================================================== -->
@@ -36,6 +34,7 @@
 
        <!-- icons
     ================================================== -->
+    {{-- <link rel="stylesheet" href="{{ asset('css/icons.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
 
     <!-- CSS
@@ -63,20 +62,55 @@
                           @foreach ($histories as $history )
 
                           <li tabindex="-1" class="uk-active">
-                              <div>
+                              {{-- <div>
 
 
                                   <a href="/history/{{$history->id}}" class="font-semibold line-clamp-2">{{$history->titre}}</a>
-                                  {{-- <div class="pt-2">
-                                      <a href="#" class="text-sm font-medium"> Adrian Mohani  </a>
+                                  <div class="pt-2">
+                                      <a href="#" class="text-sm font-medium">{{$history->user->pseudo}} </a>
                                       <div class="flex space-x-2 items-center text-sm">
                                           <div> Advance level</div>
                                           <div class="md:block hidden">·</div>
-                                          <div> 156.9K Enrolled</div>
-                                        </div>
-                                    </div> --}}
+                                          <div>
 
-                                </div>
+
+                                        </div>
+                                    </div>
+
+                                </div> --}}
+                                <div>
+                                    {{-- @if (session('status'))
+                                    <div class="uk-alert-success" uk-alert>
+                                        <a class="uk-alert-close" uk-close></a>
+                                        <p> {{ session('status') }}</p>
+                                    </div>
+                                    @endif --}}
+                                    {{-- alert --}}
+
+                                    {{-- alert --}}
+
+
+                                    <a href="/history/{{$history->id}}" class="font-semibold line-clamp-2">{{$history->titre}}</a>
+                                     <div class="pt-2">
+                                        <div class="flex space-x-2 items-center text-sm">
+
+                                            {{-- <div class="md:block hidden">·</div> --}}
+                                            @foreach ($history->Category as $category)
+                                            <div>
+                                                {{$category->label}}
+
+
+                                          </div>
+                                          @endforeach
+                                      </div>
+                                      <div>
+
+                                          {{date('d-m-Y', strtotime($history->date))}}
+                                                                <a href="#" class="text-sm font-medium"> {{$history->user->pseudo}}  </a>
+
+                                      </div>
+
+                                  </div>
                             </li>
                             @endforeach
 
@@ -87,7 +121,7 @@
 
                     </div>
                 </div>
-
+                @include('components.flashMessage')
                 {{-- // map with $history --}}
                 <x-map :histories="$histories" />
 
@@ -97,8 +131,8 @@
                         <ul class="uk-slider-items uk-child-width-1-5@m uk-child-width-1-3@s uk-child-width-1-2 uk-grid-small uk-grid" style="transform: translate3d(0px, 0px, 0px);">
                             <li tabindex="-1" class="uk-active  flex justify-center">
                                 <div class=" flex flex-col w-full items-center justify-center">
-                                     <a href="home" class="w-full md:h-28 h-20  overflow-hidden rounded-lg relative inline-block">
-                                         <img src="https://st.depositphotos.com/29688696/58028/v/600/depositphotos_580283956-stock-illustration-a-knife-weapon-the-weapon.jpg" alt="" class="w-full h-full flex justify-center absolute inset-0 object-cover">
+                                     <a href="/" class="w-1/2 md:h-28 h-20 justify-center items-center overflow-hidden rounded-lg relative flex">
+                                         <img src="https://st.depositphotos.com/29688696/58028/v/600/depositphotos_580283956-stock-illustration-a-knife-weapon-the-weapon.jpg" alt="" class="w-20 h-20 rounded-full flex justify-center items-center absolute  object-cover">
                                          {{-- <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs">  12:21</span>
                                          <img src="assets/images/icon-play.svg" class="w-12 h-12 uk-position-center" alt=""> --}}
                                      </a>
@@ -116,8 +150,13 @@
                            <li tabindex="-1" class="uk-active  flex justify-center">
                                <div class=" flex flex-col w-full items-center justify-center">
                                     <a href="homecategory/{{$category->id}}" class="w-1/2 md:h-28 h-20 justify-center items-center overflow-hidden rounded-lg relative flex">
-                                        <img src="https://st.depositphotos.com/29688696/58028/v/600/depositphotos_580283956-stock-illustration-a-knife-weapon-the-weapon.jpg" alt="" class="w-20 h-20 rounded-full flex justify-center items-center absolute  object-cover">
-                                        {{-- <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs">  12:21</span>
+                                        <img src="
+                                        @if ($category->image)
+                                        {{ asset('storage/'.$category->image) }}
+                                        @else
+                                        https://st.depositphotos.com/29688696/58028/v/600/depositphotos_580283956-stock-illustration-a-knife-weapon-the-weapon.jpg
+                                        @endif
+                                     " alt="" class="w-20 h-20 rounded-full flex justify-center items-center absolute  object-cover">  {{-- <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs">  12:21</span>
                                         <img src="assets/images/icon-play.svg" class="w-12 h-12 uk-position-center" alt=""> --}}
                                     </a>
                                     <div class="pt-3 flex justify-center w-full items-center">
