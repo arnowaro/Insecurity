@@ -17,6 +17,110 @@
             <div class="profile lg:rounded-xl">
 
 
+
+
+
+
+                @auth
+                @if ( Auth::user()->id == $history->user_id )
+
+
+
+                <div class="absolute flex right-5 top-4">
+                    <a href="#" class="z-10"> <i class="icon-feather-more-horizontal text-2xl bg-blue-200 rounded-full p-2 transition -mr-1 dark:hover:bg-gray-700"></i> </a>
+                    <div class="bg-white flex z-10 w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700"
+                    uk-drop="mode: click;pos: bottom-right;animation: uk-animation-slide-bottom-small">
+
+
+                        <ul class=" z-40">
+
+                            <li>
+                                {{-- si il y a au moins un utilisateur involved dans l'action, il est impossible de le modifier --}}
+
+                               <a href="{{ route('history.edit',['id' => $history->id])}}" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
+                               <i class="uil-edit-alt mr-1"></i>  Modifier l'history
+                               </a>
+
+
+
+
+
+                            </li>
+
+
+                            {{-- <li>
+                            <hr class="-mx-2 my-2 dark:border-gray-800">
+                            </li> --}}
+                            <li>
+                                <a href="#modal-sections" uk-toggle class="  flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md dark:hover:bg-red-600">
+                                <i class="uil-trash-alt "></i>  Supprimer
+                                </a>
+                                {{-- pop up confirmation --}}
+
+
+                                <div id="modal-sections" uk-modal>
+                                    <div class="uk-modal-dialog rounded-[25px] drop-shadow-2xl">
+                                        <button class="uk-modal-close-default m-3" type="button" uk-close></button>
+                                      <div class="flex flex-col justify-center items-center">
+                                        <div class="uk-modal-header">
+                                            <h2 class="uk-modal-title" > {{__('Do you want to cancel the action?')}} </h2>
+                                        </div>
+                                        {{-- <div class="uk-modal-body">
+                                            <p> En supprimant l'action, l'action ne serra </p>
+                                        </div> --}}
+                                        <div class="uk-modal-footer text-right justify-around flex gap-4">
+                                            <form action="{{ route('history.delete',['id' => $history->id])}}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <input type="hidden" name="id" value="{{$history->id}}">
+                                                <input type="hidden" name="user_id" value="{{ $history->user->id }}">
+                                                <input type="submit" value="ok" class="hidden" id="submit_delete">
+                                                <button class=" button bg-red-100 hover:bg-red-800 hover:text-white text-red-600 uk-modal-close" type="button" onclick=" document.getElementById('submit_delete').click() " >   <i class="uil-trash-alt "></i> {{__('Yes')}} </button>
+                                                <button class="button gray" type="button">{{__('No')}}</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                @endif
+                @endauth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {{-- //  status valided history --}}
+                @include('components.flashMessage')
                 <div class="profiles_content">
                     <div class="profile_info lg:p-3">
                         <h1> {{$history->titre}} </h1>
@@ -77,7 +181,10 @@
                         <div class="space-y-4">
 
                             <div class="space-y-4">
-                                <h1 class="block text-xl font-bold"> Description </h1>
+                                <div class="flex justify-center items-center gap-2">
+                                    <div class="icon-material-outline-assignment"></div>
+                                    <h1 class="block text-xl font-bold"> Description </h1>
+                                </div>
                                 <p> {{$history->description}}</p>
                             </div>
 
@@ -89,8 +196,11 @@
                     </div>
 
                     <div class="card p-7">
-                        <div class=" icon-material-outline-gavel"></div>
-                        <h1 class="block text-xl font-bold"> Jugement </h1>
+                        <div class="flex justify-center items-center gap-2 ">
+
+                            <div class=" icon-material-outline-gavel"></div>
+                            <h1 class="block text-xl font-bold"> Jugement </h1>
+                        </div>
                         <div class="text-gray-400"> {{$history->jugement}}</div>
 
                         {{-- <div class="my-4 flex-col flex gap-2">

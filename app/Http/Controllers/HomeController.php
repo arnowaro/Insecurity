@@ -12,7 +12,10 @@ class HomeController extends Controller
     public function home()
     {
         // history
-        $histories = History::all();
+        // $histories = History::all();
+        // order by desc created at
+        $histories = History::orderBy('created_at', 'desc')->get();
+
         $categories = Category::all();
         return view('home', [
         'categories' => $categories,
@@ -30,14 +33,17 @@ class HomeController extends Controller
     {
 
 
-        $category = Category::with('history')->find($id);
+
+
+        $category = Category::with('history')->orderBy('created_at', 'desc')->find($id);
         $categories = Category::all();
         return view('history.homecategory', [
             'categories' => $categories,
-            'histories' => $category->histories,
+           // trier par les plus récent
+            'histories' => $category->history,
+
             'category' => $category,
         ]);
-
 
 }
 

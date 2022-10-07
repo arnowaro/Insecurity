@@ -90,23 +90,24 @@
                                     {{-- alert --}}
 
 
-                                    <a href="/history/{{$history->id}}" class="font-semibold line-clamp-2">{{$history->titre}}</a>
-                                     <div class="pt-2">
-                                        <div class="flex space-x-2 items-center text-sm">
+                                    <a href="/history/{{$history->id}}" class="font-semibold text-xs line-clamp-2">{{$history->titre}}</a>
+                                     <div class=" flex flex-col align-bottom">
+                                        <div class="flex align-bottom text-sm">
 
                                             {{-- <div class="md:block hidden">·</div> --}}
                                             @foreach ($history->Category as $category)
                                             <div>
-                                                {{$category->label}}
+                                               <p class="text-[10px] text-gray-500
+
+                                               "> #{{$category->label}} &nbsp</p>
 
 
                                           </div>
                                           @endforeach
                                       </div>
-                                      <div>
+                                      <div class="flex justify-end align-bottom">
 
-                                          {{date('d-m-Y', strtotime($history->date))}}
-                                                                <a href="#" class="text-sm font-medium"> {{$history->user->pseudo}}  </a>
+                                        <p class="text-[10px] flex justify-end align-bottom"  >  {{date('d-m-Y', strtotime($history->date))}}  by {{$history->user->pseudo}}  </p>
 
                                       </div>
 
@@ -132,7 +133,10 @@
                             <li tabindex="-1" class="uk-active  flex justify-center">
                                 <div class=" flex flex-col w-full items-center justify-center">
                                      <a href="/" class="w-1/2 md:h-28 h-20 justify-center items-center overflow-hidden rounded-lg relative flex">
-                                         <img src="https://st.depositphotos.com/29688696/58028/v/600/depositphotos_580283956-stock-illustration-a-knife-weapon-the-weapon.jpg" alt="" class="w-20 h-20 rounded-full flex justify-center items-center absolute  object-cover">
+                                         <img src="{{ asset('storage/images/category/home.png') }}"
+
+
+                                         alt="" class="w-20 h-20 rounded-full flex justify-center items-center absolute  object-cover">
                                          {{-- <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs">  12:21</span>
                                          <img src="assets/images/icon-play.svg" class="w-12 h-12 uk-position-center" alt=""> --}}
                                      </a>

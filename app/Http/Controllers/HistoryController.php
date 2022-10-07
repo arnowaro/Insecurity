@@ -64,7 +64,7 @@ class HistoryController extends Controller
         $history->save();
         $history->Category()->attach($validate['categories']);
 
-        return redirect()->route('home')->with('status', '  History added  ');
+        return redirect()->route('history.show', $history->id)->with('status', '  History added  ');
 
     }
 

@@ -82,6 +82,8 @@
                         <div class="space-y-1">
                             <label for="categories" class="text-sm font-bold text-gray-700 ">Catégories</label>
                             <select name="categories[]" id="categories" multiple
+                            {{-- data max option --}}
+                            data-max-options="2"
                                 class="selectpicker">
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->label }}</option>
