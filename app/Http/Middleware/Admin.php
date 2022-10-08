@@ -30,7 +30,6 @@ class Admin
         }
 
 
-
         if (Auth::check() && $user->admin == 1) {
             return $next($request);
 

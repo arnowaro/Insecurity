@@ -70,6 +70,11 @@ class HistoryController extends Controller
 
     public function edit($id)
     {
+
+    if (auth()->user()->id != History::find($id)->user_id) {
+        return redirect()->route('history.show', $id)->with('status', '  Vous ne pouvez pas modifier cette history!  ');
+    }
+
         $history = History::with('Category')->find($id);
         $categories = Category::all();
         $categoriesHistory = collect($history->Category->toArray())->map(function ($category) {
@@ -80,8 +85,6 @@ class HistoryController extends Controller
             'categories' => $categories,
             'categoriesHistory' => $categoriesHistory
         ]);
-
-
     }
 
     public function update (Request $request, $id)
@@ -121,6 +124,9 @@ class HistoryController extends Controller
     // fonction delete  softdelete
     public function delete($id)
     {
+        if (auth()->user()->id != History::find($id)->user_id) {
+            return redirect()->route('history.show', $id)->with('status', '  You can not delete this history  ');
+        }
         $history = History::find($id);
         $history->delete();
         return redirect()->route('history.index')->with('status', '  History deleted  ');

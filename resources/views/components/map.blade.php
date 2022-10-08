@@ -63,7 +63,7 @@
             var marker = L.marker([{{ $history->latitude }}, {{ $history->longitude }}]).addTo(map);
             marker.bindPopup("<a href='{{ route('history.show', $history->id) }}'>{{ $history->titre }} </a> <br>  {{ Str::limit($history->description, 30) }}").openPopup();
 
-        @endforeach
+            @endforeach
 
 
             function myPosition() {

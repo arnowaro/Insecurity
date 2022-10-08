@@ -32,16 +32,11 @@ class HomeController extends Controller
     public function homecategory($id)
     {
 
-
-
-
         $category = Category::with('history')->orderBy('created_at', 'desc')->find($id);
         $categories = Category::all();
         return view('history.homecategory', [
             'categories' => $categories,
-           // trier par les plus récent
             'histories' => $category->history,
-
             'category' => $category,
         ]);
 
