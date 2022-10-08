@@ -63,7 +63,7 @@
                                         <button class="uk-modal-close-default m-3" type="button" uk-close></button>
                                       <div class="flex flex-col justify-center items-center">
                                         <div class="uk-modal-header">
-                                            <h2 class="uk-modal-title" > {{__('Do you want to cancel the action?')}} </h2>
+                                            <h2 class="uk-modal-title" > Souhaitez vous supprimez l'history </h2>
                                         </div>
                                         {{-- <div class="uk-modal-body">
                                             <p> En supprimant l'action, l'action ne serra </p>
@@ -74,9 +74,11 @@
                                                 @method('delete')
                                                 <input type="hidden" name="id" value="{{$history->id}}">
                                                 <input type="hidden" name="user_id" value="{{ $history->user->id }}">
-                                                <input type="submit" value="ok" class="hidden" id="submit_delete">
+                                                {{-- <input type="submit" value="ok" class="hidden" id="submit_delete"> --}}
                                                 <button class=" button bg-red-100 hover:bg-red-800 hover:text-white text-red-600 uk-modal-close" type="button" onclick=" document.getElementById('submit_delete').click() " >   <i class="uil-trash-alt "></i> {{__('Yes')}} </button>
-                                                <button class="button gray" type="button">{{__('No')}}</button>
+                                                {{-- <button class="button gray" type="button">{{__('No')}}</button> --}}
+                                                {{-- button no close pop up --}}
+                                                <button class="button bg-gray-100 hover:bg-gray-800 hover:text-white text-gray-600 uk-modal-close" type="button" >   </i> {{__('No')}} </button>
                                             </form>
                                         </div>
                                     </div>

@@ -30,6 +30,8 @@ Route::get('/homecategory/{id}', [HomeController::class, 'homecategory'])->name(
 
 Route::controller(BackofficeController::class)->group(function () {
     Route::get('/admin/', 'show')->name('dashboard');
+    Route::get('/admin/users', 'indexUsers')->name('users.index');
+    Route::get('/admin/users/{id}', 'deleteUser')->name('users.delete');
 });
 
 // middleware admin
@@ -43,12 +45,14 @@ Route::controller(CategoryController::class)->group(function () {
     Route::get('admin/category/{id}/edit', 'edit')->name('category.edit');
     Route::post('admin/category/{id}', 'update')->name('category.update');
     Route::delete('admin/category/{id}', 'delete')->name('category.delete');
+
 });
 
 });
 Route::controller(HistoryController::class)->group(function () {
+    Route::middleware(['auth', 'Admin'])->group(function () {
+    Route::get('admin/history', 'index')->name('history.index'); });
 
-    Route::get('admin/history', 'index')->name('history.index');
 
     Route::middleware(['auth'])->group(function () {
         Route::get('/history/create', 'create')->name('history.create');
@@ -56,9 +60,11 @@ Route::controller(HistoryController::class)->group(function () {
         Route::get('/history/{id}/edit', 'edit')->name('history.edit');
         Route::post('/history/{id}', 'update')->name('history.update');
         Route::delete('/history/{id}', 'delete')->name('history.delete');
-        Route::get('/history/{id}', 'show')->name('history.show');
+
+        Route::get('/admin/history', 'indexHistories')->name('history.index');
 
     });
+    Route::get('/history/{id}', 'show')->name('history.show');
     // index home category{id}
     Route::get('/history/category/{id}', 'index')->name('history.index.category');
 

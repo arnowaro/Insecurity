@@ -123,7 +123,7 @@ class HistoryController extends Controller
     {
         $history = History::find($id);
         $history->delete();
-        return redirect()->route('home')->with('status', '  History deleted  ');
+        return redirect()->route('history.index')->with('status', '  History deleted  ');
     }
 
 
@@ -131,6 +131,19 @@ class HistoryController extends Controller
 
 
     // home page by category
+
+
+    // index crud
+    public function indexHistories()
+    {
+        $histories = History::with('Category')->get();
+        return view('admin.dashboard.histories.index',
+        [
+            'histories' => $histories
+        ]);
+
+
+    }
 
 }
 

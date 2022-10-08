@@ -73,7 +73,7 @@
             <x-admin.header />
 
             <!-- Sidebar  -->
-            {{-- <x-admin.sidebar/> --}}
+            <x-admin.sidebar/>
 
             <!-- contents -->
             @yield('main')
@@ -131,6 +131,7 @@
         <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
 
 
+    @yield('script')
         @yield('js')
         @yield('jsNotif')
     </body>
